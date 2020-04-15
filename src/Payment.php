@@ -51,6 +51,9 @@ class Payment
         $signData = '';
         ksort($data);
         foreach ($data as $k => $v) {
+            if ($k == 'risk_info') {
+                continue;
+            }
             if (is_array($v)) {
                 $value = json_encode($v);
             } else {
