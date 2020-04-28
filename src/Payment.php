@@ -31,7 +31,7 @@ class Payment
             'subject' => $subject,
             'body' => $optional['body'] ?? '',
             'uid' => $uid,
-            'trade_time' => $time,
+            'trade_time' => $optional['order_time'] ?? $time,
             'valid_time' => $optional['valid_time'] ?? 300,
             'notify_url' => $optional['notify_url'] ?? '',
             'risk_info' => $optional['risk_info'] ?? json_encode(['ip' => $ip = get_client_ip()]),
